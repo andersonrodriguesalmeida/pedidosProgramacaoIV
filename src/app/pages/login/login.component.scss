@@ -1,0 +1,27 @@
+.div-login {
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+    background: red;
+    width: 400px;
+    height: 400px;
+    mat-form-field {
+        display: block
+    }
+    .titulo {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    padding: 25px;
+}
+
+.btn-logar {
+    background: rgb(115, 115, 240);
+    width: 100%;
+}
+

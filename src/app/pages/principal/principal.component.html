@@ -1,0 +1,27 @@
+<div class="principal">
+  
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Sistema de Gestão</span>
+      <span class="fill-span"></span>
+      <mat-menu #appMenu="matMenu">
+          <button mat-menu-item>Configurações</button>
+          <button mat-menu-item (click)="sair()">Sair</button>
+        </mat-menu>
+        
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="side-container">
+    <mat-drawer mode="side" opened>
+        <mat-list>
+          <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Novo Usuário</a></mat-list-item>
+          <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Pesquisar Usuário</a></mat-list-item>
+          <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Novo Cliente</a></mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,21 @@
+<div class="div-login">
+  <form [formGroup]="form" fxLayout="column" fxFlex>
+    <div class="titulo">
+        <h1>Sistema de Pedidos</h1>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutGap="2rem">
+        <mat-form-field fxFlex>
+          <input matInput placeholder="E-mail" formControlName="email">
+        </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutGap="2rem">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Senha" type="password" formControlName="senha">
+      </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="row">
+      <button mat-button (click)="logar()" class="btn-logar">Acessar</button>
+    </div>
+  </form>
+</div>
+ 
