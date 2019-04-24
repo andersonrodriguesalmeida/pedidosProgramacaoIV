@@ -5,11 +5,15 @@ import { Usuario } from '../models/usuario';
 import { AbstractService } from './abstract.service';
 
 @Injectable()
-export class UsuarioService extends AbstractService {
+export class UsuarioService extends AbstractService<Usuario> {
 
 
-    constructor(private http:HttpClient){
-        super();
+    constructor(protected http:HttpClient){
+        super(http);
+    }
+
+    getWebService(){
+        return 'usuario';
     }
 
     public logar(email:string,senha:string):Observable<Usuario> {

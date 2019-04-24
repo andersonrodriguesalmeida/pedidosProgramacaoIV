@@ -1,5 +1,5 @@
 <div class="div-cadusuario">
-  <form >
+  <form [formGroup]="form">
     <mat-card>
       <mat-card-title>
         Cadastro de Usuário
@@ -7,22 +7,22 @@
       <mat-card-content fxLayout="column">
         <div fxFlex>
           <mat-form-field fxFlex>
-            <input mat-input placeholder="Nome" >
+            <input mat-input placeholder="Nome" formControlName="nome">
           </mat-form-field>
         </div>
         <div fxFlex>
           <mat-form-field fxFlex>
-            <input mat-input type="email" placeholder="E-mail" >
+            <input mat-input type="email" placeholder="E-mail" formControlName="email">
           </mat-form-field>
         </div>
         <div fxFlex>
           <mat-form-field fxFlex>
-            <input mat-input type="password" placeholder="Senha" >
+            <input mat-input type="password" placeholder="Senha" formControlName="senha">
           </mat-form-field>
         </div>
       </mat-card-content>
       <mat-card-actions>
-          <button mat-button color="primary">Salvar</button>
+          <button mat-button color="primary" (click)="salvar()">Salvar</button>
       </mat-card-actions>
     </mat-card>
   </form>
