@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     let user = localStorage.getItem('usuario');
     if (user != null){
       this.usuario = JSON.parse(user);
+      this.router.navigate(['/principal']);
     }else {
       this.router.navigate(['login']);
     }

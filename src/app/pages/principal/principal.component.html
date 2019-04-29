@@ -15,13 +15,15 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container class="side-container">
-    <mat-drawer mode="side" opened>
+    <mat-drawer mode="side" opened class="side-menu">
         <mat-list>
-          <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Novo Usuário</a></mat-list-item>
+          <mat-list-item > <a [routerLink]="['cad-usuario']">Novo Usuário</a></mat-list-item>
           <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Pesquisar Usuário</a></mat-list-item>
           <mat-list-item > <a [routerLink]="[ '/cad-usuario']">Novo Cliente</a></mat-list-item>
         </mat-list>
     </mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>  
+    </mat-drawer-content>
   </mat-drawer-container>
 </div>
