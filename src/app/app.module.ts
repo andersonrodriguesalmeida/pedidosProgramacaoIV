@@ -11,12 +11,14 @@ import { CadUsuarioComponent } from './pages/cadusuario/cadusuario.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PesquisausuarioComponent } from './pages/pesquisausuario/pesquisausuario.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CadUsuarioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    PesquisausuarioComponent
   ],
   imports: [
     BrowserModule,
