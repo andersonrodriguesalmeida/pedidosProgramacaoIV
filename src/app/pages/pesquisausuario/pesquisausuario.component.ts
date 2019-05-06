@@ -12,7 +12,7 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./pesquisausuario.component.scss'],
   providers:[ UsuarioService ]
 })
-export class PesquisausuarioComponent implements OnInit {
+export class PesquisaUsuarioComponent implements OnInit {
 
   public displayedColumns =['select','id', 'nome', 'email'];
   public form:FormGroup;
