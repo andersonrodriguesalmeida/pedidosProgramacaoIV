@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/table';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-pesquisausuario',
@@ -13,18 +14,36 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class PesquisausuarioComponent implements OnInit {
 
-  public displayedColumns =['id', 'nome', 'email'];
+  public displayedColumns =['select','id', 'nome', 'email'];
   public form:FormGroup;
   public dataSource:MatTableDataSource<Usuario> = new MatTableDataSource([]);
+  public selectionModel:SelectionModel<Usuario> = new SelectionModel(false);
+
   constructor(private usuarioService:UsuarioService) { 
 
   }
 
   ngOnInit() {
+    this.pesquisar('');
   }
 
   public pesquisar(value){
-    // this.usuarioService.
+    this.usuarioService.pesquisar(value).subscribe( (lista)=> {
+      this.dataSource = new MatTableDataSource(lista);
+    });
+  }
+
+  isAllSelected() {
+    const numSelected = this.selectionModel.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected == numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selectionModel.clear() :
+        this.dataSource.data.forEach(row => this.selectionModel.select(row));
   }
 
 
