@@ -26,7 +26,7 @@ export class UsuarioService extends AbstractService<Usuario> {
     }
 
     public pesquisar(nome:string):Observable<Array<Usuario>> {
-        const url = this.urlService + '/pesquisar';
+        const url = this.urlService + '/buscarpornome';
         return this.http.post<Array<Usuario>>(url, nome);
 
     }
