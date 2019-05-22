@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { CadUsuarioComponent } from './pages/cadusuario/cadusuario.component';
 import { PesquisaUsuarioComponent } from './pages/pesquisausuario/pesquisausuario.component';
+import { PesquisaProdutoComponent } from './pages/pesquisaproduto/pesquisaproduto.component';
+import { CadProdutoComponent } from './pages/cadproduto/cadproduto.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,14 @@ const routes: Routes = [
       {
         path:'pesquisa-usuario',
         component:PesquisaUsuarioComponent
+      },
+      {
+        path:'pesquisa-produto',
+        component:PesquisaProdutoComponent
+      },
+      {
+        path:'cadastro-produto',
+        component:CadProdutoComponent
       }
     ]
   }
